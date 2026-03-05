@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Küresel Otomatik İnfak Sistemi</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header Section -->
+        <header class="glass-panel">
+            <div class="logo-container">
+                <i class="fa-solid fa-hands-holding-circle logo-icon"></i>
+                <div>
+                    <h1>Küresel İnfak Sistemi</h1>
+                    <p class="subtitle">Tembellik Aksiyomu: Bekleyen enerji israftır.</p>
+                </div>
+            </div>
+            
+            <div class="system-status">
+                <div class="status-indicator">
+                    <span class="pulse-dot"></span>
+                    <span id="mode-text">Home Comfort Mode</span>
+                </div>
+                <div class="parameter-control">
+                    <label for="mercy-index">Şefkat Katsayısı (Mercy Index): <span id="mercy-value">1.0</span></label>
+                    <input type="range" id="mercy-index" min="0.5" max="5.0" step="0.1" value="1.0">
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Dashboard -->
+        <main class="dashboard">
+            <!-- Global Pool Section -->
+            <section class="panel pool-panel glass-panel">
+                <div class="panel-header">
+                    <h2><i class="fa-solid fa-water"></i> Küresel Havuz</h2>
+                    <span class="badge" id="pool-count">0 Atıl Kaynak</span>
+                </div>
+                <div class="pool-visualizer" id="global-pool">
+                    <!-- Idle resources will spawn here -->
+                </div>
+            </section>
+
+            <!-- Network/Nodes Section -->
+            <section class="panel network-panel glass-panel">
+                <div class="panel-header">
+                    <h2><i class="fa-solid fa-network-wired"></i> İhtiyaç Düğümleri</h2>
+                    <button id="manual-distribute-btn" class="action-btn"><i class="fa-solid fa-bolt"></i> Dengeyi Sağla</button>
+                    <div class="auto-distribute-toggle">
+                        <span>Otomatik: </span>
+                        <label class="switch">
+                            <input type="checkbox" id="auto-toggle" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="nodes-container" id="impact-nodes">
+                    <!-- High-impact destination nodes -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer / Logs Console -->
+        <footer class="console-panel glass-panel">
+            <div class="console-header">
+                <h3><i class="fa-solid fa-terminal"></i> Sistem Günlükleri</h3>
+            </div>
+            <div class="console-logs" id="console-logs">
+                <div class="log-entry system"><span class="timestamp"></span> Sistem başlatıldı. Denetleyici Onayı: Pijamalı ve Mutlu.</div>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
